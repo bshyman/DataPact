@@ -1,1 +1,13 @@
-my view
+<h1>Routes Info</h1>
+<div>
+  <% @routes.each do |route| %>
+    <div>
+      <details>
+        <summary>
+          <%= route[:path] %>
+        </summary>
+        <p><%= route[:controller_action] %></p>
+      </details>
+    </div>
+  <% end %>
+</div>
