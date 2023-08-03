@@ -2,9 +2,12 @@
   <% @routes.each do |route_data| %>
     <div class="collapse collapse-arrow bg-base-200">
       <input type="radio" name="my-accordion-2" checked="checked"/>
-      <div class="collapse-title text-xl font-medium flex items-center justify-between">
+      <div class="collapse-title text-xl font-medium flex items-center">
+        <div class="flex items-center gap-6 flex-1">
+          <%= tag.div route_data.fetch(:verb), class: 'badge badge-neutral badge-lg' if route_data[:verb].present? %>
+          <span><%= route_data[:path]&.sub('(.:format)', '') %></span>
+        </div>
         <span><%= route_data.fetch(:name, :controller_action) %></span>
-        <span><%= route_data[:path]&.sub('(.:format)', '') %></span>
       </div>
       <div class="collapse-content">
         <p><%= route_data %></p>
