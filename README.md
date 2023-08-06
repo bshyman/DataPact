@@ -21,6 +21,11 @@ Or install it yourself as:
 $ gem install data_pact
 ```
 
+Mount the engine in your `config/routes.rb` file:
+```ruby
+mount DataPact::Engine => "/data_pact"
+```
+
 ## Contributing
 Contribution directions go here.
 
