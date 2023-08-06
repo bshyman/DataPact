@@ -1,15 +1,15 @@
 require_relative "lib/data_pact/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "data_pact"
-  spec.version     = DataPact::VERSION
-  spec.authors     = ["Benjamin Shyman"]
-  spec.email       = ["bshyman@gmail.com"]
+  spec.name = "data_pact"
+  spec.version = DataPact::VERSION
+  spec.authors = ["Benjamin Shyman"]
+  spec.email = ["bshyman@gmail.com"]
   # spec.homepage    = "TODO"
-  spec.summary     = "Data contracts between front and back end software development teams."
-  # spec.description = "TODO: Description of DataPact."
-    spec.license     = "MIT"
-  
+  spec.summary = "Debugging tool for Ruby on Rails."
+  spec.description = "Various debugging tools for Ruby on Rails"
+  spec.license = "MIT"
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
-  spec.add_dependency "rails", ">= 6.1.7.1"
+  spec.add_runtime_dependency 'rails', '~> 6.1', '>= 6.1.7.1'
 end
