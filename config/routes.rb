@@ -4,6 +4,7 @@ DataPact::Engine.routes.draw do
     delete :destroy, on: :collection
   end
   get 'routes', to: 'application#routes'
+  get 'settings', to: 'application#settings'
   root to: 'application#index'
 
 end

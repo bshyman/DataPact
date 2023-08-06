@@ -11,5 +11,8 @@ module DataPact
         }
       end
     end
+
+    def settings
+    end
   end
 end

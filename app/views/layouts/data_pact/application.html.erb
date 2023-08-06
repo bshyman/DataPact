@@ -10,8 +10,14 @@
   <%#= stylesheet_link_tag    "data_pact/application", media: "all" %>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css"/>
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
+  <script type="text/javascript" charset="utf-8">
+  (function () {
+    document.body.dataset.theme = localStorage.getItem('theme') || 'light';
+  })();
+</script>
 
 <div class="h-screen w-screen">
   <!-- Code block starts -->
@@ -35,9 +41,9 @@
           <li>
             <a href="/datapact/routes" class="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 dark:text-white   mr-6 tracking-normal">Routes</a>
           </li>
-          <!--          <li>-->
-          <!--            <a href="javascript:void(0)" class="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 dark:text-white   mr-6 tracking-normal">Settings</a>-->
-          <!--          </li>-->
+          <li>
+            <a href="<%= settings_path %>" class="focus:outline-none border-b-2 border-transparent font-medium cursor-pointer h-full flex items-center hover:text-indigo-700 text-sm text-gray-800 dark:text-white   mr-6 tracking-normal">Settings</a>
+          </li>
         </ul>
       </div>
       <!--      <div class="md:flex items-center justify-end hidden">-->
@@ -284,7 +290,5 @@
     <%= yield %>
   </div>
 </div>
-
-
 </body>
 </html>
