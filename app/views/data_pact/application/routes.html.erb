@@ -1,7 +1,9 @@
-<div class="flex flex-col gap-y-2">
+<div x-data="routes" class="flex flex-col gap-y-2">
+  <div class="form-control w-1/2">
+    <input x-model="searchTerm" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto"/>
+  </div>
   <% @routes.each do |route_data| %>
-    <div class="collapse collapse-arrow bg-base-200">
-      <input type="radio" name="my-accordion-2" checked="checked"/>
+    <div x-show="showRoute($el)" class="collapse collapse-arrow bg-base-200" data-route="<%= route_data.inspect %>">
       <div class="collapse-title text-xl font-medium flex items-center">
         <div class="flex items-center gap-6 flex-1">
           <%= tag.div route_data.fetch(:verb), class: 'badge badge-neutral badge-lg' if route_data[:verb].present? %>
@@ -15,3 +17,16 @@
     </div>
   <% end %>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('routes', () => ({
+      searchTerm: '',
+      showRoute(e) {
+        let string = e.dataset.route
+        let regex = new RegExp(this.searchTerm, 'i')
+        return regex.test(string)
+      }
+    }))
+  })
+</script>
