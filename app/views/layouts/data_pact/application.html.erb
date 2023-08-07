@@ -19,18 +19,19 @@
   })();
 </script>
 
-<div class="h-screen w-screen">
+<div class="min-h-screen w-screen">
   <div class="navbar bg-base-100 border-b border-base-200">
     <div class="flex-1">
       <div class="btn btn-ghost normal-case text-xl">DataPact</div>
       <%= link_to 'Routes', routes_path, class: 'btn btn-ghost normal-case text-lg font-medium' %>
       <%= link_to 'Session Data', session_data_path, class: 'btn btn-ghost normal-case text-lg font-medium' %>
+      <%= link_to 'Jobs', jobs_path, class: 'btn btn-ghost normal-case text-lg font-medium' %>
       <%= link_to 'Settings', settings_path, class: 'btn btn-ghost normal-case text-lg font-medium' %>
     </div>
     <div class="flex-none gap-2">
-      <div class="form-control">
-        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto"/>
-      </div>
+<!--      <div class="form-control">-->
+<!--        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto"/>-->
+<!--      </div>-->
     </div>
   </div>
   <div class="my-3 mx-6">

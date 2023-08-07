@@ -1,0 +1,24 @@
+<div class="px-4">
+  <div class="overflow-x-auto">
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th>Enqueued At</th>
+        <th>Class</th>
+        <th>Queue</th>
+        <th>Args</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td class="whitespace-nowrap"><%= Time.at(job['enqueued_at']).strftime('%b %d %H:%M') %></td>
+          <td><%= job['class'] %></td>
+          <td><%= job['queue'] %></td>
+          <td><%= job['args'] %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

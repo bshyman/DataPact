@@ -14,5 +14,9 @@ module DataPact
 
     def settings
     end
+
+    def jobs
+      @jobs = Sidekiq::Queue.all.flat_map(&:to_a).sort_by(&:enqueued_at)
+    end
   end
 end
