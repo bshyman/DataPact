@@ -1,5 +1,10 @@
 module DataPact
   class ApplicationController < ActionController::Base
+
+    def index
+      redirect_to routes_path
+    end
+
     def routes
       @routes = Rails.application.routes.routes.map do |route|
         {
