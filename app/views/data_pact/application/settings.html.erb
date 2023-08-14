@@ -1,9 +1,9 @@
 <div x-data="settings" class="w-2/3">
   <div class="rounded bg-base-100 place-content-center py-4">
     <div class="flex flex-1 items-center justify-between px-6">
-      <span class="text-primary-content text-xl font-medium">Theme</span>
+      <span class="text-base-content text-xl font-medium">Theme</span>
 
-      <select @change="changeTheme($event)" class="select select-bordered w-full max-w-xs text-primary-content">
+      <select @change="changeTheme($event)" class="select select-bordered w-full max-w-xs text-base-content">
         <%= options_for_select(themes_for_select) %>
       </select>
     </div>
