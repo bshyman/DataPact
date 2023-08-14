@@ -3,7 +3,7 @@ DataPact::Engine.routes.draw do
   resources :session_data, only: [:index, :create] do
     delete :destroy, on: :collection
   end
-  get 'routes', to: 'application#routes'
+  get 'routes', to: 'route_data#index'
   get 'settings', to: 'application#settings'
   get 'jobs', to: 'application#jobs'
   root to: 'application#index'

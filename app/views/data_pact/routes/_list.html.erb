@@ -1,0 +1,16 @@
+<% @routes.each do |route_data| %>
+  <!--    add collapse-arrow class to re-enable accordion-->
+  <div  class="collapse  bg-base-200" data-route="<%= route_data.inspect %>">
+    <input type="radio" name="routes-accordion-2" checked="checked"/>
+    <div class="collapse-title text-xl font-medium flex items-center">
+      <div class="flex items-center gap-6 flex-1">
+        <%= tag.div route_data.fetch(:verb), class: 'badge badge-neutral badge-lg' if route_data[:verb].present? %>
+        <span><%= route_data[:path]&.sub('(.:format)', '') %></span>
+      </div>
+      <span><%= route_data.fetch(:name, :controller_action) %></span>
+    </div>
+    <div class="collapse-content">
+      <p><%= route_data.inspect %></p>
+    </div>
+  </div>
+<% end %>

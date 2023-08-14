@@ -1,11 +1,6 @@
 module DataPact
-  class ApplicationController < ActionController::Base
-
+  class RouteDataController < ApplicationController
     def index
-      redirect_to routes_path
-    end
-
-    def routes
       @routes = Rails.application.routes.routes.map do |route|
         {
           name: route.name,
@@ -17,24 +12,26 @@ module DataPact
         }
       end
 
+      if params[:controller_filter].present?
+        @routes = @routes.select { |r| r[:controller] == params[:controller_filter] }
+      end
+
+      if params[:search_term].present?
+        @routes = @routes.select { |r| r.values.map(&:to_s).any? { |v| v&.include?(params[:search_term]) } }
+      end
+
+      @controllers = @routes.collect { |r| r[:controller] }
       respond_to do |format|
-        format.html
+        format.html { render 'routes' }
         format.json do
-          render json:  {
+          render json: {
             partial: render_to_string(partial: 'data_pact/routes/list', formats: [:html]),
           }
         end
       end
     end
 
-    def settings
-    end
-
-    def jobs
-      @jobs = Sidekiq::Queue.all.flat_map(&:to_a).sort_by(&:enqueued_at)
-      @redis = true
-    rescue Redis::CannotConnectError => e
-      @redis = false
+    def list
     end
   end
 end
