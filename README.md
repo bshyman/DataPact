@@ -45,5 +45,3 @@ We welcome contributions from developers of all skill levels. If you're interest
 DataPact is available as open-source software under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use it, modify it, and share it as you see fit.
 
 ---
-
-I've tried to make the README more engaging and informative, emphasizing the usefulness of DataPact to Ruby on Rails developers. Feel free to modify it as you see fit, or let me know if you'd like any further changes!
