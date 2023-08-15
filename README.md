@@ -4,6 +4,11 @@ Short description and motivation.
 ## Usage
 How to use my plugin.
 
+![check me out](/app/assets/images/data_pact/overview.gif)
+
+
+
+
 ## Installation
 Add this line to your application's Gemfile:
 
