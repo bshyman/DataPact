@@ -36,5 +36,15 @@ module DataPact
     rescue Redis::CannotConnectError => e
       @redis = false
     end
+
+
+    def rakes
+      if Rails.env.development?
+        Rails.application.load_tasks
+        @tasks = Rake::Task.tasks.map(&:to_s).sort
+      else
+        render plain: 'This page is only available in a development environment', status: :forbidden
+      end
+    end
   end
 end

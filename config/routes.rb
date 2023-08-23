@@ -6,6 +6,7 @@ DataPact::Engine.routes.draw do
   get 'routes', to: 'route_data#index'
   get 'settings', to: 'application#settings'
   get 'jobs', to: 'application#jobs'
+  get 'rakes', to: 'application#rakes'
   root to: 'application#index'
 
 end

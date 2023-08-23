@@ -1,0 +1,19 @@
+<div class="overflow-x-auto">
+  <table class="table table-sm">
+    <!-- head -->
+    <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- row 1 -->
+    <% @tasks.each_slice(2) do |task_a, task_b| %>
+      <tr class="hover">
+        <td class="ml-4"><%= task_a %></td>
+        <td class="ml-4"><%= task_b %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
